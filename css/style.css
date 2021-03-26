@@ -13,6 +13,8 @@ html, body {
     height: 100%;
     
     background-color: rgba(225, 222, 255, 1);
+
+    scroll-behavior: smooth;
 }
 /* Tags de ajuste */
 .clear {
@@ -108,77 +110,13 @@ header nav.menu-desktop ul a:hover {
 
     text-shadow: 0 0 5px rgba(23, 142, 253, 0.8);
 }
-input[type=checkbox] {
+nav div.menu-mobile {
     display: none;
-}
-input[type=checkbox]:checked ~ label #button-menu-mobile {
-    animation: abrir;
-    animation-duration: 1.6s;
-}
-nav.menu-mobile {
-    display: none;
-
-    width: 32px;
-    height: 32px;
-
-    background-size: contain;
 
     cursor: pointer;
 }
-nav.menu-mobile ul {
+nav input {
     display: none;
-
-    position: absolute;
-
-    width: 100%;
-    height: 0;
-
-    left: 0;
-    top: 100px;
-
-    padding: 10px 5px;
-
-    text-align: center;
-
-    margin: auto 0;
-
-    list-style-type: none;
-
-    background-color: rgba(65, 64, 131, 1);
-
-    border-bottom-left-radius: 15%;
-    border-bottom-right-radius: 15%;
-
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.45);
-
-    z-index: 20;
-}
-nav.menu-mobile ul li {
-    display: none;
-
-    padding: 5px 0;
-
-    animation-name: menus-li;
-    animation-duration: 1.5s;
-}
-nav.menu-mobile ul li:hover {
-    background-color: rgb(44, 44, 95);
-
-    transition: 0.8s;
-}
-nav.menu-mobile ul li a {
-    text-decoration: none;
-    
-    font-size: 28px;
-
-    color: white;
-}
-nav.menu-mobile ul li a:hover {
-    font-size: 32px;
-
-    text-shadow: rgba(106, 105, 179, 0.6);
-
-    transition: 0.8s;
 }
 /* chamada-1 */
 .text-background {
@@ -636,17 +574,148 @@ footer p:nth-of-type(2) {
     nav.menu-desktop {
         display: none;
     }
-    nav.menu-mobile {
-        display: block;
+    header nav .menu-mobile {
+        display: none;
+        
+        position: fixed;
 
-        float: right;
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+
+        z-index: 10; 
     }
-    nav.menu-mobile ul {
-        height: 310px;
+    header nav .menu-mobile ul {
+        position: absolute;
+
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+
+        opacity: 0;
+
+        list-style-type: none; 
     }
-    nav.menu-mobile ul li {
-        display: block;
+    header nav .menu-mobile ul li {
+        text-align: center;
+
+        margin-bottom: 35px; 
     }
+    header nav .menu-mobile ul li a {
+        color: rgba(225, 222, 255, 1);
+
+        font-size: 48px;
+
+        text-decoration: none;
+        
+        text-shadow: 0 0 0 rgba(0, 0, 0, 0.4);
+
+        transition: 0.5s;
+
+        user-select: none; 
+    }
+    header nav .menu-mobile ul li a:hover {
+        text-shadow: 0 0 7px rgba(0, 0, 0, 0.6); 
+
+        font-size: 52px;
+    }
+                /* Botão */
+                header nav .menu-mobile-button {
+                    display: block;
+    
+                    position: fixed;
+    
+                    width: 52px;
+                    height: 52px;
+    
+                    top: 5px;
+                    right: 5px;
+    
+                    margin: 5px 2%;
+    
+                    border-radius: 50%;
+    
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4), 0 0 5px rgba(65, 64, 131, 1);
+                    
+                    background-color: rgba(65, 64, 131, 1);
+    
+                    transition: 0.5s cubic-bezier(0.5, 0.7, 0, 1);
+    
+                    z-index: 5;
+    
+                    float: right;
+    
+                    cursor: pointer; 
+                }
+                header nav .menu-mobile-button:hover {
+                    box-shadow: 0 0 8px rgba(65, 64, 131, 1), 0 0 5px rgba(65, 64, 131, 1); 
+                }
+                header nav input {
+                    display: none; 
+                }
+                header nav input:checked ~ label .menu-mobile-button {
+                    box-shadow: 0 0 0 0 rgba(65, 64, 131, 1), 0 0 0 200vw rgba(65, 64, 131, 1); 
+                }
+                header nav input:checked ~ label .hamburguer {
+                    transform: rotate(45deg); 
+                }
+                header nav input:checked ~ label .hamburguer:after {
+                    transform: rotate(90deg);
+    
+                    bottom: 0; 
+                }
+                header nav input:checked ~ label .hamburguer:before {
+                    transform: rotate(90deg);
+    
+                    top: 0; 
+                }
+                header nav input:checked ~ div.menu-mobile {
+                    display: block; 
+                }
+                header nav input:checked ~ div.menu-mobile ul {
+                    animation-name: menu-mobile;
+                    animation-duration: 1s;
+    
+                    opacity: 1; 
+                }
+                header nav .menu-mobile-button .hamburguer {
+                    display: block;
+    
+                    position: relative;
+    
+                    width: 32px;
+                    height: 3px;
+    
+                    margin: 48% auto;
+                    
+                    transition: 0.5s ease-in-out;
+    
+                    background-color: rgba(225, 222, 255, 1); 
+                }
+                header nav .menu-mobile-button .hamburguer:before,
+                header nav .menu-mobile-button .hamburguer:after {
+                    display: block;
+    
+                    content: '';
+    
+                    width: 100%;
+                    height: 100%;
+                    
+                    transition: 0.5s ease-in-out;
+    
+                    background-color: rgba(225, 222, 255, 1);
+    
+                    position: absolute; 
+                }
+                header nav .menu-mobile-button .hamburguer:before {
+                    top: -10px; 
+                }
+                header nav .menu-mobile-button .hamburguer:after {
+                    bottom: -10px; 
+                }
+                /* *** */
     .text-background {
         max-width: 100%;
         height: auto;
@@ -750,32 +819,11 @@ footer p:nth-of-type(2) {
     }
 }
 /* keyframes */
-@keyframes image {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-@keyframes abrir {
-    0% {
-        opacity: 0;
-        height: 0;
-    }
-    100% {
-        opacity: 1;
-        height: 310px;
-    }
-}
-@keyframes menus-li {
+@keyframes menu-mobile {
     0% {
         opacity: 0;
     }
-    60% {
+    30% {
         opacity: 0;
     }
     100% {

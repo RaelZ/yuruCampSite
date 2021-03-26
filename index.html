@@ -12,6 +12,9 @@
         <!-- css -->
         <link rel="stylesheet" href="css/style.css">
 
+        <!-- logo aba -->
+        <link rel="sortcut icon" href="imgs/cabaninha.png" />
+
         <!-- meta tags -->
         <meta charset="UTF-8">
 
@@ -20,12 +23,12 @@
         <meta name="description" content="Conteúdo do meu site">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-        <!-- fim das meta tags -->
+        <!-- fim das tags -->
     </head>
 
     <body>
         
-        <header>
+        <header id="header">
 
             <div class="container">
 
@@ -41,19 +44,28 @@
                     </ul>
 
                 </nav><!--menu-desktop-->
-                <input id="input" type="checkbox">
-                <label for="input">
-                    <nav id="menu-mobile" class="menu-mobile" onclick="mobile()">
+                <nav>
                         
-                        <ul id="button-menu-mobile" style="display: none;">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="#section2">Sobre</a></li>
-                            <li><a href="#section3">Personagens</a></li>
-                            <li><a href="#section4">Acampamentos</a></li>
-                        </ul><!--menu-mobile-->
+                    <input id="menu-hamburguer" type="checkbox">
+                    <label for="menu-hamburguer">
+                        <div class="menu-mobile-button">
+                            <span class="hamburguer"></span>
+                        </div>
+                    </label>
+                        
+                    <div class="menu-mobile">
+        
+                        <ul>
+                            <li><a href="#header" onclick="menuClick()">Home</a></li>
+                            <li><a href="#section2" onclick="menuClick()">Sobre</a></li>
+                            <li><a href="#section3" onclick="menuClick()">Personagens</a></li>
+                            <li><a href="#section4" onclick="menuClick()">Acampamentos</a></li>
+                        </ul>
+            
+                    </div><!-- menu-mobile -->
 
-                    </nav>
-                </label>
+                </nav>
+
                 <div class="clear"></div>
 
                 <div class="text-background">
