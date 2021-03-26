@@ -658,7 +658,7 @@ footer p:nth-of-type(2) {
                     display: none; 
                 }
                 header nav input:checked ~ label .menu-mobile-button {
-                    box-shadow: 0 0 0 0 rgba(65, 64, 131, 1), 0 0 0 200vw rgba(65, 64, 131, 1); 
+                    box-shadow: 0 0 0 0 rgba(65, 64, 131, 1), 0 0 0 500vw rgba(65, 64, 131, 1); 
                 }
                 header nav input:checked ~ label .hamburguer {
                     transform: rotate(45deg); 
