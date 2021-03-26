@@ -415,11 +415,12 @@ section.section-3 {
 
     list-style-type: none;
 
+    align-items: center;
+
     min-width: 150px;
-    max-width: 200px;
 
     margin-top: 25px;
-    padding: 0 20px;
+    padding: 0 30%;
 
     vertical-align: bottom;
 
@@ -433,7 +434,7 @@ section.section-3 {
     width: 12px;
     height: 12px;
 
-    margin: auto auto;
+    margin: 0 auto;
 
     border-radius: 50%;
 
@@ -770,6 +771,11 @@ footer p:nth-of-type(2) {
         margin-top: 30px;
 
         padding: 0 2%;
+    }
+    #direction {
+        width: 85%;
+
+        margin: 0 auto;
     }
     .map-wraper {
         width: 100%;
