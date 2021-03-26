@@ -418,9 +418,10 @@ section.section-3 {
     align-items: center;
 
     min-width: 150px;
+    max-width: 250px;
 
     margin-top: 25px;
-    padding: 0 30%;
+    padding: 0 20px;
 
     vertical-align: bottom;
 
@@ -776,6 +777,11 @@ footer p:nth-of-type(2) {
         width: 85%;
 
         margin: 0 auto;
+    }
+    #characters-selection {
+        max-width: none;
+        
+        padding: 0 30%;
     }
     .map-wraper {
         width: 100%;
